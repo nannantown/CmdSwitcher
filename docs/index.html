@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CmdSwitcher - MacでCommandキーを使って日本語/英語入力を切り替え</title>
+
+    <!-- SEO -->
+    <meta name="description" content="CmdSwitcherは、MacのUS配列キーボードで左Commandキーを押すと英数、右Commandキーを押すとかな入力に切り替えられる軽量アプリです。⌘英かなの代替として最適。">
+    <meta name="keywords" content="Mac,macOS,Commandキー,英数,かな,入力切り替え,US配列,キーボード,⌘英かな,代替">
+    <meta name="author" content="nannantown">
+
+    <!-- OGP -->
+    <meta property="og:title" content="CmdSwitcher - Commandキーで入力切り替え">
+    <meta property="og:description" content="MacのUS配列キーボードで、左Cmdで英数、右Cmdでかな入力に切り替え。軽量172KB、誤動作なし。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nannantown.github.io/CmdSwitcher/">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CmdSwitcher - Commandキーで入力切り替え">
+    <meta name="twitter:description" content="MacのUS配列キーボードで、左Cmdで英数、右Cmdでかな入力に切り替え。軽量172KB、誤動作なし。">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-icon">⌘</div>
+            <h1>CmdSwitcher</h1>
+            <p class="tagline">Commandキーで、瞬時に入力切り替え</p>
+            <p class="description">
+                MacのUS配列キーボードで<br>
+                <strong>左Command → 英数</strong>、<strong>右Command → かな</strong><br>
+                シンプル、軽量、誤動作なし
+            </p>
+            <a href="https://github.com/nannantown/CmdSwitcher/releases/download/v1.0.0/CmdSwitcher-v1.0.0.zip" class="btn-download">
+                無料ダウンロード
+                <span class="btn-sub">v1.0.0 / macOS 12+</span>
+            </a>
+            <a href="https://github.com/nannantown/CmdSwitcher" class="link-github">GitHubで見る →</a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>特徴</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>超軽量</h3>
+                    <p>わずか<strong>172KB</strong>。メモリ使用量も最小限。バックグラウンドで動作してもPCに負荷をかけません。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>誤動作なし</h3>
+                    <p><strong>Command+C</strong>などのショートカット時は発動しません。単独で短く押した時だけ切り替わります。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>ユニバーサル対応</h3>
+                    <p><strong>Intel Mac</strong>と<strong>Apple Silicon Mac</strong>の両方に対応したユニバーサルバイナリ。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>使い方</h2>
+            <div class="usage-table">
+                <div class="usage-row">
+                    <div class="usage-key">左 ⌘ Command</div>
+                    <div class="usage-arrow">→</div>
+                    <div class="usage-result">英数入力</div>
+                </div>
+                <div class="usage-row">
+                    <div class="usage-key">右 ⌘ Command</div>
+                    <div class="usage-arrow">→</div>
+                    <div class="usage-result">かな入力</div>
+                </div>
+            </div>
+            <p class="usage-note">※ 300ms以上の長押しや、他のキーとの組み合わせでは発動しません</p>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="installation">
+        <div class="container">
+            <h2>インストール方法</h2>
+            <ol class="install-steps">
+                <li>
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <h4>ダウンロード</h4>
+                        <p>上のボタンからzipファイルをダウンロードして解凍</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <h4>アプリケーションフォルダに移動</h4>
+                        <p><code>CmdSwitcher.app</code>を<code>/Applications</code>フォルダにドラッグ</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <h4>起動 & 権限設定</h4>
+                        <p>初回起動時に「アクセシビリティ」の権限を許可してください</p>
+                        <p class="step-detail">システム設定 → プライバシーとセキュリティ → アクセシビリティ</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why">
+        <div class="container">
+            <h2>なぜCmdSwitcher？</h2>
+            <p>
+                <strong>⌘英かな</strong>など既存のツールは、macOSのアップデートで動作しなくなったり、
+                スペースキーやエンターキーが反応しなくなる不具合が報告されています。
+            </p>
+            <p>
+                CmdSwitcherは<strong>シンプルな実装</strong>と<strong>誤動作防止ロジック</strong>で、
+                安定した動作を実現しています。
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>CmdSwitcher は <a href="https://github.com/nannantown/CmdSwitcher">GitHub</a> でオープンソースとして公開されています</p>
+            <p class="copyright">MIT License</p>
+        </div>
+    </footer>
+</body>
+</html>

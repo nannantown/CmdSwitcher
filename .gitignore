@@ -1,5 +1,6 @@
 # Build output
 build/
+*.zip
 
 # macOS
 .DS_Store
