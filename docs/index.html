@@ -40,6 +40,9 @@
                 無料ダウンロード
                 <span class="btn-sub">v1.0.0 / macOS 12+</span>
             </a>
+            <p class="download-count">
+                <span id="download-counter">-</span> ダウンロード
+            </p>
             <a href="https://github.com/nannantown/CmdSwitcher" class="link-github">GitHubで見る →</a>
         </div>
     </header>
@@ -141,5 +144,25 @@
             <p class="copyright">MIT License</p>
         </div>
     </footer>
+
+    <!-- Download Counter Script -->
+    <script>
+        async function fetchDownloadCount() {
+            try {
+                const response = await fetch('https://api.github.com/repos/nannantown/CmdSwitcher/releases');
+                const releases = await response.json();
+                let totalDownloads = 0;
+                releases.forEach(release => {
+                    release.assets.forEach(asset => {
+                        totalDownloads += asset.download_count;
+                    });
+                });
+                document.getElementById('download-counter').textContent = totalDownloads.toLocaleString();
+            } catch (error) {
+                document.getElementById('download-counter').textContent = '-';
+            }
+        }
+        fetchDownloadCount();
+    </script>
 </body>
 </html>

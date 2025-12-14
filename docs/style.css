@@ -99,6 +99,19 @@ h2 {
     margin-top: 4px;
 }
 
+/* Download Counter */
+.download-count {
+    margin-top: 16px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.download-count #download-counter {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
 .link-github {
     display: block;
     margin-top: 20px;
