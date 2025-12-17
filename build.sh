@@ -33,7 +33,8 @@ swiftc \
     -o "$BUILD_DIR/${APP_NAME}_arm64" \
     "$SCRIPT_DIR/CmdSwitcher/main.swift" \
     "$SCRIPT_DIR/CmdSwitcher/KeyHandler.swift" \
-    "$SCRIPT_DIR/CmdSwitcher/AppDelegate.swift"
+    "$SCRIPT_DIR/CmdSwitcher/AppDelegate.swift" \
+    "$SCRIPT_DIR/CmdSwitcher/UpdateChecker.swift"
 
 # x86_64 (Intel) 用にコンパイル
 echo "Compiling for x86_64..."
@@ -48,7 +49,8 @@ swiftc \
     -o "$BUILD_DIR/${APP_NAME}_x86_64" \
     "$SCRIPT_DIR/CmdSwitcher/main.swift" \
     "$SCRIPT_DIR/CmdSwitcher/KeyHandler.swift" \
-    "$SCRIPT_DIR/CmdSwitcher/AppDelegate.swift"
+    "$SCRIPT_DIR/CmdSwitcher/AppDelegate.swift" \
+    "$SCRIPT_DIR/CmdSwitcher/UpdateChecker.swift"
 
 # ユニバーサルバイナリを作成
 echo "Creating universal binary..."

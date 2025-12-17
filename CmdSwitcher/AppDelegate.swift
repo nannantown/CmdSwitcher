@@ -25,6 +25,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if isEnabled {
             startKeyHandler()
         }
+
+        // アップデートチェック（1日1回）
+        UpdateChecker.shared.checkForUpdatesIfNeeded()
     }
 
     func applicationWillTerminate(_ notification: Notification) {
@@ -60,6 +63,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(launchItem)
 
         menu.addItem(NSMenuItem.separator())
+
+        // アップデート確認
+        menu.addItem(NSMenuItem(title: "Check for Updates...", action: #selector(checkForUpdates), keyEquivalent: ""))
 
         // アクセシビリティ設定を開く
         menu.addItem(NSMenuItem(title: "Open Accessibility Settings...", action: #selector(openAccessibilitySettings), keyEquivalent: ""))
@@ -129,6 +135,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             UserDefaults.standard.set(newState, forKey: launchAtLoginKey)
             updateMenu()
         }
+    }
+
+    @objc private func checkForUpdates() {
+        UpdateChecker.shared.checkForUpdatesManually()
     }
 
     @objc private func openAccessibilitySettings() {
