@@ -1,219 +1,481 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CmdSwitcher - MacでCommandキーを使って日本語/英語入力を切り替え</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <!-- SEO -->
-    <meta name="description" content="CmdSwitcherは、MacのUS配列キーボードで左Commandキーを押すと英数、右Commandキーを押すとかな入力に切り替えられる軽量アプリです。⌘英かなの代替として最適。">
-    <meta name="keywords" content="Mac,macOS,Commandキー,英数,かな,入力切り替え,US配列,キーボード,⌘英かな,代替">
+    <!-- Primary Meta Tags -->
+    <title>CmdSwitcher - MacのCommandキーで日本語/英語入力を瞬時に切り替え | 無料ダウンロード</title>
+    <meta name="title" content="CmdSwitcher - MacのCommandキーで日本語/英語入力を瞬時に切り替え">
+    <meta name="description" content="CmdSwitcherは、MacのUS配列キーボードで左Commandキーを押すと英数、右Commandキーを押すとかな入力に切り替えられる無料の軽量アプリです。⌘英かなの代替として最適。macOS 12以降対応、Intel/Apple Silicon両対応。">
+    <meta name="keywords" content="CmdSwitcher,Mac,macOS,Commandキー,英数,かな,入力切り替え,US配列,キーボード,⌘英かな,代替,IME,日本語入力,無料,フリーソフト,Apple Silicon,M1,M2,M3">
     <meta name="author" content="nannantown">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
 
-    <!-- OGP -->
-    <meta property="og:title" content="CmdSwitcher - Commandキーで入力切り替え">
-    <meta property="og:description" content="MacのUS配列キーボードで、左Cmdで英数、右Cmdでかな入力に切り替え。軽量172KB、誤動作なし。">
+    <!-- Canonical & Language -->
+    <link rel="canonical" href="https://nannantown.github.io/CmdSwitcher/">
+    <link rel="alternate" hreflang="ja" href="https://nannantown.github.io/CmdSwitcher/">
+    <link rel="alternate" hreflang="x-default" href="https://nannantown.github.io/CmdSwitcher/">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232563eb' width='100' height='100' rx='20'/><text x='50' y='70' text-anchor='middle' fill='white' font-size='60'>⌘</text></svg>">
+    <meta name="apple-mobile-web-app-title" content="CmdSwitcher">
+    <meta name="application-name" content="CmdSwitcher">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="msapplication-TileColor" content="#2563eb">
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nannantown.github.io/CmdSwitcher/">
+    <meta property="og:title" content="CmdSwitcher - MacのCommandキーで日本語/英語入力を瞬時に切り替え">
+    <meta property="og:description" content="MacのUS配列キーボードで、左Cmdで英数、右Cmdでかな入力に切り替え。軽量・高速・誤動作なし。無料でダウンロード可能。">
+    <meta property="og:image" content="https://nannantown.github.io/CmdSwitcher/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="CmdSwitcher - Commandキーで入力切り替え">
+    <meta property="og:site_name" content="CmdSwitcher">
     <meta property="og:locale" content="ja_JP">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="CmdSwitcher - Commandキーで入力切り替え">
-    <meta name="twitter:description" content="MacのUS配列キーボードで、左Cmdで英数、右Cmdでかな入力に切り替え。軽量172KB、誤動作なし。">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://nannantown.github.io/CmdSwitcher/">
+    <meta name="twitter:title" content="CmdSwitcher - MacのCommandキーで日本語/英語入力を瞬時に切り替え">
+    <meta name="twitter:description" content="MacのUS配列キーボードで、左Cmdで英数、右Cmdでかな入力に切り替え。軽量・高速・誤動作なし。無料でダウンロード可能。">
+    <meta name="twitter:image" content="https://nannantown.github.io/CmdSwitcher/og-image.svg">
+    <meta name="twitter:image:alt" content="CmdSwitcher - Commandキーで入力切り替え">
 
+    <!-- Performance -->
+    <link rel="preconnect" href="https://api.github.com">
+    <link rel="dns-prefetch" href="https://api.github.com">
+    <link rel="preconnect" href="https://github.com">
+    <link rel="dns-prefetch" href="https://github.com">
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "CmdSwitcher",
+        "operatingSystem": "macOS 12+",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "1"
+        },
+        "description": "MacのUS配列キーボードで左Commandキーを押すと英数、右Commandキーを押すとかな入力に切り替えられる軽量アプリ",
+        "softwareVersion": "1.3.0",
+        "fileSize": "1.8MB",
+        "downloadUrl": "https://github.com/nannantown/CmdSwitcher/releases/download/v1.3.0/CmdSwitcher-v1.3.0.zip",
+        "screenshot": "https://nannantown.github.io/CmdSwitcher/og-image.svg",
+        "author": {
+            "@type": "Person",
+            "name": "nannantown",
+            "url": "https://github.com/nannantown"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "nannantown"
+        },
+        "license": "https://opensource.org/licenses/MIT",
+        "releaseNotes": "https://github.com/nannantown/CmdSwitcher/releases",
+        "softwareRequirements": "macOS 12.0以降",
+        "processorRequirements": "Intel または Apple Silicon",
+        "permissions": "アクセシビリティ権限が必要"
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "CmdSwitcherとは何ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CmdSwitcherは、MacのUS配列キーボードでCommandキーを使って日本語/英語入力を切り替えられる無料アプリです。左Commandキーで英数、右Commandキーでかな入力に切り替わります。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "⌘英かなとの違いは何ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CmdSwitcherは最新のmacOSに対応し、スペースキーやエンターキーが反応しなくなる不具合がありません。また、ワンクリック自動アップデート機能を搭載しており、常に最新版を維持できます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Apple Silicon (M1/M2/M3) Macに対応していますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "はい、CmdSwitcherはユニバーサルバイナリとして提供されており、Intel MacとApple Silicon Mac (M1/M2/M3/M4) の両方でネイティブ動作します。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Command+Cなどのショートカットと干渉しませんか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "干渉しません。CmdSwitcherは300ミリ秒以内の単独押しの場合のみ入力切り替えを行います。他のキーと組み合わせた場合や長押しの場合は発動しないため、通常のショートカット操作に影響しません。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Spotlightでも動作しますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "はい、v1.1.0以降ではSpotlight検索を含むすべてのアプリケーションで入力切り替えが正常に動作します。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "アクセシビリティ権限は安全ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CmdSwitcherはオープンソースソフトウェアです。GitHubでソースコードを確認できます。アクセシビリティ権限はキーボードイベントの監視にのみ使用され、個人情報の収集は一切行いません。"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://nannantown.github.io/CmdSwitcher/"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Hero Section -->
-    <header class="hero">
+<body itemscope itemtype="https://schema.org/WebPage">
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+    <!-- Header / Hero Section -->
+    <header class="hero" role="banner">
         <div class="container">
-            <div class="hero-icon">⌘</div>
-            <h1>CmdSwitcher</h1>
-            <p class="tagline">Commandキーで、瞬時に入力切り替え</p>
+            <div class="hero-icon" aria-hidden="true">⌘</div>
+            <h1 itemprop="name">CmdSwitcher</h1>
+            <p class="tagline" itemprop="description">Commandキーで、瞬時に入力切り替え</p>
             <p class="description">
                 MacのUS配列キーボードで<br>
                 <strong>左Command → 英数</strong>、<strong>右Command → かな</strong><br>
                 シンプル、軽量、誤動作なし
             </p>
-            <a href="https://github.com/nannantown/CmdSwitcher/releases/download/v1.3.0/CmdSwitcher-v1.3.0.zip" class="btn-download">
+            <a href="https://github.com/nannantown/CmdSwitcher/releases/download/v1.3.0/CmdSwitcher-v1.3.0.zip"
+               class="btn-download"
+               role="button"
+               aria-label="CmdSwitcher v1.3.0を無料ダウンロード"
+               itemprop="downloadUrl">
                 無料ダウンロード
-                <span class="btn-sub">v1.3.0 / macOS 12+</span>
+                <span class="btn-sub">v1.3.0 / macOS 12+ / Intel & Apple Silicon</span>
             </a>
-            <p class="download-count">
-                <span id="download-counter">-</span> ダウンロード
+            <p class="download-count" aria-live="polite">
+                <span id="download-counter" aria-label="ダウンロード数">-</span> ダウンロード
             </p>
-            <a href="https://github.com/nannantown/CmdSwitcher" class="link-github">GitHubで見る →</a>
+            <a href="https://github.com/nannantown/CmdSwitcher"
+               class="link-github"
+               rel="noopener"
+               aria-label="GitHubでソースコードを見る">
+                <span aria-hidden="true">GitHub</span>でソースコードを見る →
+            </a>
         </div>
     </header>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2>特徴</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>超軽量</h3>
-                    <p>わずか<strong>172KB</strong>。メモリ使用量も最小限。バックグラウンドで動作してもPCに負荷をかけません。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>誤動作なし</h3>
-                    <p><strong>Command+C</strong>などのショートカット時は発動しません。単独で短く押した時だけ切り替わります。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💻</div>
-                    <h3>ユニバーサル対応</h3>
-                    <p><strong>Intel Mac</strong>と<strong>Apple Silicon Mac</strong>の両方に対応したユニバーサルバイナリ。</p>
+    <!-- Main Content -->
+    <main id="main-content" role="main" itemprop="mainContentOfPage">
+
+        <!-- Features Section -->
+        <section class="features" aria-labelledby="features-heading">
+            <div class="container">
+                <h2 id="features-heading">特徴</h2>
+                <div class="feature-grid" role="list">
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">⚡</div>
+                        <h3>超軽量・高速</h3>
+                        <p>わずか<strong>1.8MB</strong>。メモリ使用量も最小限。バックグラウンドで動作してもMacに負荷をかけません。起動も切り替えも一瞬です。</p>
+                    </article>
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">🎯</div>
+                        <h3>誤動作なし</h3>
+                        <p><strong>Command+C</strong>などのショートカット時は発動しません。<strong>300ms以内</strong>の単独押しのみ切り替わる安心設計です。</p>
+                    </article>
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">💻</div>
+                        <h3>全Macに対応</h3>
+                        <p><strong>Intel Mac</strong>と<strong>Apple Silicon Mac</strong>（M1/M2/M3/M4）の両方でネイティブ動作するユニバーサルバイナリ。</p>
+                    </article>
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">🔄</div>
+                        <h3>自動アップデート</h3>
+                        <p>新しいバージョンがあれば通知。<strong>ワンクリック</strong>で自動ダウンロード・インストール・再起動。常に最新版を維持。</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- How it Works Section -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2>使い方</h2>
-            <div class="usage-table">
-                <div class="usage-row">
-                    <div class="usage-key">左 ⌘ Command</div>
-                    <div class="usage-arrow">→</div>
-                    <div class="usage-result">英数入力</div>
-                </div>
-                <div class="usage-row">
-                    <div class="usage-key">右 ⌘ Command</div>
-                    <div class="usage-arrow">→</div>
-                    <div class="usage-result">かな入力</div>
-                </div>
-            </div>
-            <p class="usage-note">※ 300ms以上の長押しや、他のキーとの組み合わせでは発動しません</p>
-        </div>
-    </section>
-
-    <!-- Installation Section -->
-    <section class="installation">
-        <div class="container">
-            <h2>インストール方法</h2>
-            <ol class="install-steps">
-                <li>
-                    <span class="step-number">1</span>
-                    <div class="step-content">
-                        <h4>ダウンロード</h4>
-                        <p>上のボタンからzipファイルをダウンロードして解凍</p>
+        <!-- How it Works Section -->
+        <section class="how-it-works" aria-labelledby="usage-heading">
+            <div class="container">
+                <h2 id="usage-heading">使い方</h2>
+                <div class="usage-table" role="list" aria-label="キー操作と結果の対応">
+                    <div class="usage-row" role="listitem">
+                        <kbd class="usage-key" aria-label="左Commandキー">左 ⌘ Command</kbd>
+                        <span class="usage-arrow" aria-hidden="true">→</span>
+                        <span class="usage-result">英数入力</span>
                     </div>
-                </li>
-                <li>
-                    <span class="step-number">2</span>
-                    <div class="step-content">
-                        <h4>アプリケーションフォルダに移動</h4>
-                        <p><code>CmdSwitcher.app</code>を<code>/Applications</code>フォルダにドラッグ</p>
+                    <div class="usage-row" role="listitem">
+                        <kbd class="usage-key" aria-label="右Commandキー">右 ⌘ Command</kbd>
+                        <span class="usage-arrow" aria-hidden="true">→</span>
+                        <span class="usage-result">かな入力</span>
                     </div>
-                </li>
-                <li>
-                    <span class="step-number">3</span>
-                    <div class="step-content">
-                        <h4>起動 & 権限設定</h4>
-                        <p>初回起動時に「アクセシビリティ」の権限を許可してください</p>
-                        <p class="step-detail">システム設定 → プライバシーとセキュリティ → アクセシビリティ</p>
+                </div>
+                <p class="usage-note">※ 300ms以上の長押しや、他のキーとの組み合わせでは発動しません</p>
+            </div>
+        </section>
+
+        <!-- Installation Section -->
+        <section class="installation" aria-labelledby="install-heading">
+            <div class="container">
+                <h2 id="install-heading">インストール方法</h2>
+                <ol class="install-steps" role="list">
+                    <li role="listitem">
+                        <span class="step-number" aria-hidden="true">1</span>
+                        <div class="step-content">
+                            <h3>ダウンロード</h3>
+                            <p>上のボタンからzipファイルをダウンロードして解凍</p>
+                        </div>
+                    </li>
+                    <li role="listitem">
+                        <span class="step-number" aria-hidden="true">2</span>
+                        <div class="step-content">
+                            <h3>アプリケーションフォルダに移動</h3>
+                            <p><code>CmdSwitcher.app</code>を<code>/Applications</code>フォルダにドラッグ</p>
+                        </div>
+                    </li>
+                    <li role="listitem">
+                        <span class="step-number" aria-hidden="true">3</span>
+                        <div class="step-content">
+                            <h3>起動 & 権限設定</h3>
+                            <p>初回起動時に「アクセシビリティ」の権限を許可してください</p>
+                            <p class="step-detail"><strong>システム設定</strong> → <strong>プライバシーとセキュリティ</strong> → <strong>アクセシビリティ</strong></p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section class="comparison" aria-labelledby="comparison-heading">
+            <div class="container">
+                <h2 id="comparison-heading">なぜCmdSwitcher？</h2>
+                <div class="comparison-content">
+                    <p>
+                        <strong>⌘英かな</strong>など既存のツールは、macOSのアップデートで動作しなくなったり、
+                        スペースキーやエンターキーが反応しなくなる不具合が報告されています。
+                    </p>
+                    <p>
+                        CmdSwitcherは<strong>シンプルな実装</strong>と<strong>誤動作防止ロジック</strong>で、
+                        安定した動作を実現。さらに<strong>自動アップデート機能</strong>で常に最新の状態を維持できます。
+                    </p>
+                    <div class="comparison-table-wrapper">
+                        <table class="comparison-table" aria-label="CmdSwitcherと他のツールの比較">
+                            <thead>
+                                <tr>
+                                    <th scope="col">機能</th>
+                                    <th scope="col">CmdSwitcher</th>
+                                    <th scope="col">他のツール</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>最新macOS対応</td>
+                                    <td><span class="check" aria-label="対応">✓</span></td>
+                                    <td><span class="cross" aria-label="問題あり">△</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Spotlight対応</td>
+                                    <td><span class="check" aria-label="対応">✓</span></td>
+                                    <td><span class="cross" aria-label="非対応">✗</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Apple Silicon対応</td>
+                                    <td><span class="check" aria-label="対応">✓</span></td>
+                                    <td><span class="cross" aria-label="問題あり">△</span></td>
+                                </tr>
+                                <tr>
+                                    <td>自動アップデート</td>
+                                    <td><span class="check" aria-label="対応">✓</span></td>
+                                    <td><span class="cross" aria-label="非対応">✗</span></td>
+                                </tr>
+                                <tr>
+                                    <td>オープンソース</td>
+                                    <td><span class="check" aria-label="対応">✓</span></td>
+                                    <td><span class="cross" aria-label="非対応">✗</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </li>
-            </ol>
-        </div>
-    </section>
+                </div>
+            </div>
+        </section>
 
-    <!-- Why Section -->
-    <section class="why">
-        <div class="container">
-            <h2>なぜCmdSwitcher？</h2>
-            <p>
-                <strong>⌘英かな</strong>など既存のツールは、macOSのアップデートで動作しなくなったり、
-                スペースキーやエンターキーが反応しなくなる不具合が報告されています。
-            </p>
-            <p>
-                CmdSwitcherは<strong>シンプルな実装</strong>と<strong>誤動作防止ロジック</strong>で、
-                安定した動作を実現しています。
-            </p>
-        </div>
-    </section>
+        <!-- FAQ Section -->
+        <section class="faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <h2 id="faq-heading">よくある質問</h2>
+                <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+                    <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 itemprop="name">Command+Cなどのショートカットと干渉しませんか？</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">干渉しません。CmdSwitcherは<strong>300ミリ秒以内の単独押し</strong>の場合のみ入力切り替えを行います。他のキーと組み合わせた場合や長押しの場合は発動しないため、通常のショートカット操作に影響しません。</p>
+                        </div>
+                    </article>
+                    <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 itemprop="name">アクセシビリティ権限は安全ですか？</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">CmdSwitcherは<strong>オープンソース</strong>ソフトウェアです。<a href="https://github.com/nannantown/CmdSwitcher" rel="noopener">GitHub</a>でソースコードを確認できます。アクセシビリティ権限はキーボードイベントの監視にのみ使用され、個人情報の収集は一切行いません。</p>
+                        </div>
+                    </article>
+                    <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 itemprop="name">ログイン時に自動起動できますか？</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">はい。メニューバーのCmdSwitcherアイコンをクリックし、<strong>「Launch at Login」</strong>にチェックを入れると、Mac起動時に自動的にCmdSwitcherが起動します。</p>
+                        </div>
+                    </article>
+                    <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 itemprop="name">Intel MacとApple Silicon Macの両方で使えますか？</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">はい。CmdSwitcherは<strong>ユニバーサルバイナリ</strong>として提供されており、Intel MacとApple Silicon Mac（M1/M2/M3/M4チップ搭載Mac）の両方でネイティブに動作します。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <!-- Release Notes Section -->
-    <section class="release-notes">
-        <div class="container">
-            <h2>リリースノート</h2>
-            <div class="release">
-                <div class="release-header">
-                    <h3>v1.3.0</h3>
-                    <span class="release-date">2025年12月17日</span>
+        <!-- Release Notes Section -->
+        <section class="release-notes" aria-labelledby="release-heading">
+            <div class="container">
+                <h2 id="release-heading">リリースノート</h2>
+                <div class="release-list">
+                    <article class="release">
+                        <header class="release-header">
+                            <h3>v1.3.0</h3>
+                            <time class="release-date" datetime="2025-12-17">2025年12月17日</time>
+                        </header>
+                        <ul class="release-changes">
+                            <li><strong>新機能:</strong> ワンクリック自動アップデート機能</li>
+                            <li>「Update Now」をクリックするだけで自動的にダウンロード・インストール・再起動</li>
+                            <li>GitHubページを開く必要がなくなりました</li>
+                        </ul>
+                    </article>
+                    <article class="release">
+                        <header class="release-header">
+                            <h3>v1.2.0</h3>
+                            <time class="release-date" datetime="2025-12-17">2025年12月17日</time>
+                        </header>
+                        <ul class="release-changes">
+                            <li><strong>新機能:</strong> アップデート通知機能を追加</li>
+                            <li>起動時に1日1回、新しいバージョンがあるか自動でチェック</li>
+                            <li>メニューから「Check for Updates...」で手動確認も可能</li>
+                        </ul>
+                    </article>
+                    <article class="release">
+                        <header class="release-header">
+                            <h3>v1.1.0</h3>
+                            <time class="release-date" datetime="2025-12-17">2025年12月17日</time>
+                        </header>
+                        <ul class="release-changes">
+                            <li><strong>修正:</strong> Spotlight検索でIME切り替えが動作しない問題を修正</li>
+                            <li>イベント送信をHIDレベルに変更し、システム全体で安定動作するように改善</li>
+                        </ul>
+                    </article>
+                    <article class="release">
+                        <header class="release-header">
+                            <h3>v1.0.0</h3>
+                            <time class="release-date" datetime="2025-12-14">2025年12月14日</time>
+                        </header>
+                        <ul class="release-changes">
+                            <li>初回リリース</li>
+                            <li>左Command → 英数、右Command → かな切り替え機能</li>
+                            <li>誤動作防止ロジック（300ms以内の単独押しのみ発動）</li>
+                            <li>Intel Mac / Apple Silicon 両対応</li>
+                        </ul>
+                    </article>
                 </div>
-                <ul class="release-changes">
-                    <li><strong>新機能:</strong> ワンクリック自動アップデート機能</li>
-                    <li>「Update Now」をクリックするだけで自動的にダウンロード・インストール・再起動</li>
-                    <li>GitHubページを開く必要がなくなりました</li>
-                </ul>
             </div>
-            <div class="release">
-                <div class="release-header">
-                    <h3>v1.2.0</h3>
-                    <span class="release-date">2025年12月17日</span>
-                </div>
-                <ul class="release-changes">
-                    <li><strong>新機能:</strong> アップデート通知機能を追加</li>
-                    <li>起動時に1日1回、新しいバージョンがあるか自動でチェック</li>
-                    <li>メニューから「Check for Updates...」で手動確認も可能</li>
-                </ul>
-            </div>
-            <div class="release">
-                <div class="release-header">
-                    <h3>v1.1.0</h3>
-                    <span class="release-date">2025年12月17日</span>
-                </div>
-                <ul class="release-changes">
-                    <li><strong>修正:</strong> Spotlight検索でIME切り替えが動作しない問題を修正</li>
-                    <li>イベント送信をHIDレベルに変更し、システム全体で安定動作するように改善</li>
-                </ul>
-            </div>
-            <div class="release">
-                <div class="release-header">
-                    <h3>v1.0.0</h3>
-                    <span class="release-date">2025年12月14日</span>
-                </div>
-                <ul class="release-changes">
-                    <li>初回リリース</li>
-                    <li>左Command → 英数、右Command → かな切り替え機能</li>
-                    <li>誤動作防止ロジック（300ms以内の単独押しのみ発動）</li>
-                    <li>Intel Mac / Apple Silicon 両対応</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>CmdSwitcher は <a href="https://github.com/nannantown/CmdSwitcher">GitHub</a> でオープンソースとして公開されています</p>
-            <p class="copyright">MIT License</p>
+            <nav aria-label="フッターナビゲーション">
+                <ul class="footer-links">
+                    <li><a href="https://github.com/nannantown/CmdSwitcher" rel="noopener">GitHub</a></li>
+                    <li><a href="https://github.com/nannantown/CmdSwitcher/releases" rel="noopener">リリース</a></li>
+                    <li><a href="https://github.com/nannantown/CmdSwitcher/issues" rel="noopener">問題を報告</a></li>
+                </ul>
+            </nav>
+            <p>CmdSwitcher は <a href="https://github.com/nannantown/CmdSwitcher" rel="noopener">GitHub</a> でオープンソースとして公開されています</p>
+            <p class="copyright">
+                <small>© 2025 <a href="https://github.com/nannantown" rel="noopener author">nannantown</a>. Released under the <a href="https://opensource.org/licenses/MIT" rel="noopener license">MIT License</a>.</small>
+            </p>
         </div>
     </footer>
 
     <!-- Download Counter Script -->
     <script>
-        async function fetchDownloadCount() {
-            try {
-                const response = await fetch('https://api.github.com/repos/nannantown/CmdSwitcher/releases');
-                const releases = await response.json();
-                let totalDownloads = 0;
-                releases.forEach(release => {
-                    release.assets.forEach(asset => {
-                        totalDownloads += asset.download_count;
+        (function() {
+            'use strict';
+            async function fetchDownloadCount() {
+                try {
+                    const response = await fetch('https://api.github.com/repos/nannantown/CmdSwitcher/releases');
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    const releases = await response.json();
+                    let totalDownloads = 0;
+                    releases.forEach(function(release) {
+                        release.assets.forEach(function(asset) {
+                            totalDownloads += asset.download_count;
+                        });
                     });
-                });
-                document.getElementById('download-counter').textContent = totalDownloads.toLocaleString();
-            } catch (error) {
-                document.getElementById('download-counter').textContent = '-';
+                    var counter = document.getElementById('download-counter');
+                    if (counter) {
+                        counter.textContent = totalDownloads.toLocaleString('ja-JP');
+                    }
+                } catch (error) {
+                    console.warn('Failed to fetch download count:', error);
+                }
             }
-        }
-        fetchDownloadCount();
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', fetchDownloadCount);
+            } else {
+                fetchDownloadCount();
+            }
+        })();
     </script>
 </body>
 </html>

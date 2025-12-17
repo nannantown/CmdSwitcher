@@ -1,0 +1,8 @@
+# CmdSwitcher - robots.txt
+# https://nannantown.github.io/CmdSwitcher/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nannantown.github.io/CmdSwitcher/sitemap.xml

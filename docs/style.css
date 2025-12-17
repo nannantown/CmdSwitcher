@@ -1,48 +1,153 @@
+/* ===========================================
+   CmdSwitcher Landing Page Styles
+   Optimized for performance and accessibility
+   =========================================== */
+
 /* Reset & Base */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
+    /* Colors */
     --primary: #2563eb;
     --primary-dark: #1d4ed8;
+    --primary-light: #3b82f6;
     --bg-dark: #0f172a;
     --bg-section: #1e293b;
+    --bg-card: #1e293b;
     --text: #f1f5f9;
     --text-muted: #94a3b8;
     --accent: #38bdf8;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+
+    /* Typography */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    --font-mono: "SF Mono", Monaco, "Cascadia Code", monospace;
+
+    /* Spacing */
+    --section-padding: clamp(60px, 10vw, 100px);
+    --container-max: 800px;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 200ms ease;
+}
+
+/* Accessibility: Skip Link */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 0 0 8px 8px;
+    z-index: 9999;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    font-family: var(--font-sans);
     background-color: var(--bg-dark);
     color: var(--text);
     line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    max-width: 800px;
+    max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 24px;
 }
 
+/* Typography */
+h1, h2, h3, h4 {
+    line-height: 1.3;
+    font-weight: 700;
+}
+
 h2 {
-    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
     margin-bottom: 2rem;
     text-align: center;
 }
 
-/* Hero Section */
+h3 {
+    font-size: 1.2rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-light);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+strong {
+    color: var(--text);
+}
+
+code {
+    font-family: var(--font-mono);
+    background: var(--bg-dark);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* ===========================================
+   Hero Section
+   =========================================== */
 .hero {
     text-align: center;
-    padding: 80px 24px;
+    padding: var(--section-padding) 24px;
     background: linear-gradient(135deg, var(--bg-dark) 0%, #1e3a5f 100%);
 }
 
 .hero-icon {
-    font-size: 4rem;
+    font-size: clamp(3rem, 8vw, 4rem);
     background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -51,52 +156,59 @@ h2 {
 }
 
 .hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 3rem);
     margin-bottom: 16px;
 }
 
 .tagline {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     color: var(--accent);
     margin-bottom: 24px;
 }
 
 .description {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
     color: var(--text-muted);
     margin-bottom: 32px;
     line-height: 2;
 }
 
-.description strong {
-    color: var(--text);
-}
-
+/* Download Button */
 .btn-download {
     display: inline-block;
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
-    text-decoration: none;
     padding: 16px 40px;
     border-radius: 12px;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: 600;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    border: none;
+    cursor: pointer;
 }
 
 .btn-download:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+    color: white;
+}
+
+.btn-download:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.btn-download:active {
+    transform: translateY(0);
 }
 
 .btn-sub {
     display: block;
     font-size: 0.8rem;
     font-weight: 400;
-    opacity: 0.8;
-    margin-top: 4px;
+    opacity: 0.85;
+    margin-top: 6px;
 }
 
 /* Download Counter */
@@ -106,33 +218,36 @@ h2 {
     font-size: 0.95rem;
 }
 
-.download-count #download-counter {
+#download-counter {
     color: var(--accent);
     font-weight: 600;
     font-size: 1.1rem;
 }
 
+/* GitHub Link */
 .link-github {
-    display: block;
+    display: inline-block;
     margin-top: 20px;
     color: var(--text-muted);
-    text-decoration: none;
     font-size: 0.95rem;
+    transition: color var(--transition-fast);
 }
 
 .link-github:hover {
     color: var(--accent);
 }
 
-/* Features Section */
+/* ===========================================
+   Features Section
+   =========================================== */
 .features {
-    padding: 80px 24px;
+    padding: var(--section-padding) 24px;
     background-color: var(--bg-section);
 }
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 24px;
 }
 
@@ -141,6 +256,12 @@ h2 {
     padding: 32px 24px;
     border-radius: 16px;
     text-align: center;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .feature-icon {
@@ -149,7 +270,6 @@ h2 {
 }
 
 .feature-card h3 {
-    font-size: 1.2rem;
     margin-bottom: 12px;
 }
 
@@ -158,13 +278,11 @@ h2 {
     font-size: 0.95rem;
 }
 
-.feature-card strong {
-    color: var(--text);
-}
-
-/* How it Works Section */
+/* ===========================================
+   How it Works Section
+   =========================================== */
 .how-it-works {
-    padding: 80px 24px;
+    padding: var(--section-padding) 24px;
 }
 
 .usage-table {
@@ -189,11 +307,13 @@ h2 {
     background: var(--bg-dark);
     padding: 12px 20px;
     border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .usage-arrow {
     color: var(--accent);
     font-size: 1.5rem;
+    flex-shrink: 0;
 }
 
 .usage-result {
@@ -208,9 +328,11 @@ h2 {
     font-size: 0.9rem;
 }
 
-/* Installation Section */
+/* ===========================================
+   Installation Section
+   =========================================== */
 .installation {
-    padding: 80px 24px;
+    padding: var(--section-padding) 24px;
     background-color: var(--bg-section);
 }
 
@@ -226,6 +348,10 @@ h2 {
     margin-bottom: 32px;
 }
 
+.install-steps li:last-child {
+    margin-bottom: 0;
+}
+
 .step-number {
     flex-shrink: 0;
     width: 40px;
@@ -237,10 +363,10 @@ h2 {
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    font-size: 1.1rem;
 }
 
-.step-content h4 {
-    font-size: 1.1rem;
+.step-content h3 {
     margin-bottom: 8px;
 }
 
@@ -249,47 +375,138 @@ h2 {
     font-size: 0.95rem;
 }
 
-.step-content code {
-    background: var(--bg-dark);
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-family: "SF Mono", Monaco, monospace;
-    font-size: 0.9rem;
-}
-
 .step-detail {
     font-size: 0.85rem !important;
     margin-top: 8px;
 }
 
-/* Why Section */
-.why {
-    padding: 80px 24px;
+/* ===========================================
+   Comparison Section
+   =========================================== */
+.comparison {
+    padding: var(--section-padding) 24px;
 }
 
-.why p {
+.comparison-content p {
     max-width: 600px;
     margin: 0 auto 20px;
     text-align: center;
     color: var(--text-muted);
 }
 
-.why strong {
+.comparison-table-wrapper {
+    overflow-x: auto;
+    margin-top: 32px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: var(--bg-section);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.comparison-table th {
+    background: var(--bg-dark);
+    font-weight: 600;
     color: var(--text);
 }
 
-/* Release Notes Section */
-.release-notes {
-    padding: 80px 24px;
+.comparison-table th:first-child {
+    text-align: left;
+}
+
+.comparison-table td:first-child {
+    text-align: left;
+    color: var(--text-muted);
+}
+
+.comparison-table tbody tr {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.check {
+    color: var(--success);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.cross {
+    color: var(--danger);
+    font-size: 1.2rem;
+}
+
+/* ===========================================
+   FAQ Section
+   =========================================== */
+.faq {
+    padding: var(--section-padding) 24px;
     background-color: var(--bg-section);
 }
 
-.release {
-    max-width: 600px;
-    margin: 0 auto 32px;
+.faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.faq-item {
     background: var(--bg-dark);
     border-radius: 12px;
     padding: 24px;
+    margin-bottom: 16px;
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-item h3 {
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.faq-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.faq-item a {
+    color: var(--accent);
+}
+
+/* ===========================================
+   Release Notes Section
+   =========================================== */
+.release-notes {
+    padding: var(--section-padding) 24px;
+}
+
+.release-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.release {
+    background: var(--bg-section);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
 }
 
 .release:last-child {
@@ -302,12 +519,12 @@ h2 {
     justify-content: space-between;
     margin-bottom: 16px;
     padding-bottom: 12px;
-    border-bottom: 1px solid #334155;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .release-header h3 {
-    font-size: 1.3rem;
     color: var(--accent);
+    font-size: 1.3rem;
 }
 
 .release-date {
@@ -317,7 +534,6 @@ h2 {
 
 .release-changes {
     list-style: none;
-    padding: 0;
 }
 
 .release-changes li {
@@ -328,6 +544,10 @@ h2 {
     font-size: 0.95rem;
 }
 
+.release-changes li:last-child {
+    margin-bottom: 0;
+}
+
 .release-changes li::before {
     content: "•";
     position: absolute;
@@ -335,43 +555,58 @@ h2 {
     color: var(--primary);
 }
 
-.release-changes li strong {
-    color: var(--text);
-}
-
-/* Footer */
+/* ===========================================
+   Footer
+   =========================================== */
 .footer {
-    padding: 40px 24px;
+    padding: 48px 24px 40px;
     text-align: center;
     background-color: var(--bg-section);
-    border-top: 1px solid #334155;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
 }
 
 .footer a {
     color: var(--accent);
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
 }
 
 .copyright {
-    margin-top: 12px;
-    color: var(--text-muted);
-    font-size: 0.85rem;
+    margin-top: 16px;
 }
 
-/* Responsive */
+.copyright small {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
 @media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .tagline {
-        font-size: 1.2rem;
-    }
-
     .usage-row {
         flex-direction: column;
         gap: 12px;
@@ -379,5 +614,79 @@ h2 {
 
     .usage-arrow {
         transform: rotate(90deg);
+    }
+
+    .install-steps li {
+        gap: 16px;
+    }
+
+    .step-number {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .footer-links {
+        gap: 16px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --text-muted: #b4c6dc;
+    }
+
+    .btn-download {
+        border: 2px solid white;
+    }
+
+    .feature-card,
+    .faq-item,
+    .release {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .hero {
+        background: none;
+    }
+
+    .btn-download,
+    .skip-link,
+    .footer-links {
+        display: none;
     }
 }
