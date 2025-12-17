@@ -278,6 +278,67 @@ h2 {
     color: var(--text);
 }
 
+/* Release Notes Section */
+.release-notes {
+    padding: 80px 24px;
+    background-color: var(--bg-section);
+}
+
+.release {
+    max-width: 600px;
+    margin: 0 auto 32px;
+    background: var(--bg-dark);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.release:last-child {
+    margin-bottom: 0;
+}
+
+.release-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #334155;
+}
+
+.release-header h3 {
+    font-size: 1.3rem;
+    color: var(--accent);
+}
+
+.release-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.release-changes {
+    list-style: none;
+    padding: 0;
+}
+
+.release-changes li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.release-changes li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+.release-changes li strong {
+    color: var(--text);
+}
+
 /* Footer */
 .footer {
     padding: 40px 24px;
