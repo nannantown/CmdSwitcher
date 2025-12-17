@@ -179,12 +179,12 @@ final class KeyHandler {
 
         // キーダウン
         if let keyDown = CGEvent(keyboardEventSource: source, virtualKey: CGKeyCode(keyCode), keyDown: true) {
-            keyDown.post(tap: .cgAnnotatedSessionEventTap)
+            keyDown.post(tap: .cghidEventTap)
         }
 
         // キーアップ
         if let keyUp = CGEvent(keyboardEventSource: source, virtualKey: CGKeyCode(keyCode), keyDown: false) {
-            keyUp.post(tap: .cgAnnotatedSessionEventTap)
+            keyUp.post(tap: .cghidEventTap)
         }
     }
 }
